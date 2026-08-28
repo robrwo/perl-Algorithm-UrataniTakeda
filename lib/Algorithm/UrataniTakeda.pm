@@ -18,6 +18,10 @@ our $VERSION = 'v0.1.3';
 
     my @all = $m->matches($text);
 
+    if ( $m->has_match($text) ) {
+        ...
+    }
+
     sub callback( $pos, $phrase ) {
         ...
         return 1;
@@ -251,6 +255,8 @@ This returns the first match, or C<undef> if there are none.
     }
 
 =method has_match
+
+    if ( $m->has_match( $text ) ) { ... }
 
 This returns true if there is a match.
 
