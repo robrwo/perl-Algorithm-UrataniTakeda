@@ -265,7 +265,9 @@ This returns the first match, or C<undef> if there are none.
 
 =head1 SEE ALSO
 
-This implementation was based on "A Fast String-Searching Algorithm for Multiple Patterns", B<Information, Processing & Management 29 (6)>, pp. 775-791, 1993.
+This implementation was based on
+Uratani N. and Takeda M.,
+"A Fast String-Searching Algorithm for Multiple Patterns", B<Information, Processing & Management 29 (6)>, pp. 775-791, 1993.
 L<doi:10.1016/0306-4573(93)90106-N>.
 
 =head1 prepend:SUPPORT

@@ -38,6 +38,7 @@ Changes for version v0.1.2 (2026-08-28)
 
 - Documentation
     - Moved STATUS section above DESCRIPTION.
+    - Fixed citation in SEE ALSO.
 - Toolchain
     - Updated keyword metadata.
 
@@ -125,5 +126,7 @@ The Artistic License 2.0 (GPL Compatible)
 
 # SEE ALSO
 
-This implementation was based on "A Fast String-Searching Algorithm for Multiple Patterns", **Information, Processing & Management 29 (6)**, pp. 775-791, 1993.
+This implementation was based on
+Uratani N. and Takeda M.,
+"A Fast String-Searching Algorithm for Multiple Patterns", **Information, Processing & Management 29 (6)**, pp. 775-791, 1993.
 [doi:10.1016/0306-4573(93)90106-N](doi:10.1016/0306-4573\(93\)90106-N).

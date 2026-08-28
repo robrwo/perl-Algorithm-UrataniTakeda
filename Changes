@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Moved STATUS section above DESCRIPTION.
 
+  - Fixed citation in SEE ALSO.
+
   [Toolchain]
   - Updated keyword metadata.
 
