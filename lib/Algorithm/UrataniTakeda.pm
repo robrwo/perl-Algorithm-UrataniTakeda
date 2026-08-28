@@ -4,7 +4,11 @@
 use v5.26;
 use Object::Pad;
 
-package Algorithm::UrataniTakeda v0.0.5;
+# ABSTRACT: an implementation of the Uratani-Takeda string searching algorithm
+
+package Algorithm::UrataniTakeda;
+
+our $VERSION = 'v0.0.6'; # Dist::Zilla cannot handle versions on the package line.
 
 =head1 SYNOPSIS
 
@@ -263,5 +267,28 @@ This returns the first match, or C<undef> if there are none.
 
 This implementation was based on "A Fast String-Searching Algorithm for Multiple Patterns", B<Information, Processing & Management 29 (6)>, pp. 775-791, 1993.
 L<doi:10.1016/0306-4573(93)90106-N>.
+
+head1 prepend:SUPPORT
+
+Only the latest release of this module will be supported.
+
+This module requires Perl v5.26 or later.
+
+=head2 Reporting Bugs and Submitting Feature Requests
+
+=head1 append:SUPPORT
+
+If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
+then see F<SECURITY.md> for instructions how to report security vulnerabilities.
+
+=begin :prelude
+
+=for Pod::Coverage DOES META new
+
+=for Pod::Coverage build_phi build_shift1 build_shift2 enter
+
+=for stopwords Aho Commentz Corasick Takeda Uratani
+
+=end :prelude
 
 =cut

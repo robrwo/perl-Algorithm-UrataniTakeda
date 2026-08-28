@@ -1,1 +1,5 @@
 perltidy.ERR
+.build/
+Algorithm-UrataniTakeda-v*/
+Algorithm-UrataniTakeda-v*.tar.gz
+Algorithm-UrataniTakeda-v*.sigstore.json
