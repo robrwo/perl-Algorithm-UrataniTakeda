@@ -284,6 +284,8 @@ This was added in v0.1.2.
 
 }
 
+1;
+
 =head1 SEE ALSO
 
 This implementation was based on

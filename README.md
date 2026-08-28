@@ -40,6 +40,8 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 Changes for version v0.1.3 (2026-08-28)
 
+- Bug Fixes
+    - Fixed the missing yield true in the class, to future-proof this module.
 - Documentation
     - Added code sample for the has\_match method.
 

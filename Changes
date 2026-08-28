@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Fixed the missing yield true in the class, to future-proof this module.
+
   [Documentation]
   - Added code sample for the has_match method.
 
