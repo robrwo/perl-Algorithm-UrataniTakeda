@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Fixed enter method destroying the ends of trie branches.
 
+  - Fixed search wraparound error.
+
   [Documentation]
   - Added code sample for the has_match method.
 

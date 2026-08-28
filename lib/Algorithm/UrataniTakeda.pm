@@ -197,7 +197,7 @@ If the callback returns a false value, it stops looking for additional matches.
       TEXT: while ( $q <= $n ) {
 
             my $z = 0;
-            while ( $states->[$z]{ $string[$q] } ) {
+            while ( $q >= 0 && $states->[$z]{ $string[$q] } ) {
                 $z = $states->[$z]{ $string[$q] };
                 if ( $ends->[$z] ) {
                     $callback->( $q, $ends->[$z] ) or last TEXT;
