@@ -39,7 +39,7 @@ Changes for version v0.1.2 (2026-08-28)
 - Documentation
     - Moved STATUS section above DESCRIPTION.
 - Toolchain
-    - Updated keyword metadata
+    - Updated keyword metadata.
 
 See the `Changes` file for more details.
 
