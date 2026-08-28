@@ -9,7 +9,7 @@
 use v5.26;
 use Object::Pad;
 
-package Algorithm::UrataniTakeda v0.0.2;
+package Algorithm::UrataniTakeda v0.0.3;
 
 class Algorithm::UrataniTakeda {
 
@@ -169,6 +169,15 @@ class Algorithm::UrataniTakeda {
 
         }
 
+    }
+
+    method matches( $text ) {
+
+        my @matches;
+
+        $self->search( $text, sub( $, $phrase ) { push @matches, $phrase; return 1; } );
+
+        return @matches;
     }
 
 
