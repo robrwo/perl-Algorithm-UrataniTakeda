@@ -1,15 +1,40 @@
-# Experimental implementation of the Uratani-Takeda string searching algorithm,
-# "A Fast String-Searching Algorithm for Multiple Patterns"
-# Information, Processing & Management 29 (6), pp. 775-791, 1993.
-# doi:10.1016/0306-4573(93)90106-N.
-
 # SPDX-FileCopyrightText: 2026 Robert Rothenberg <perl@rhizomnic.com>
 # SPDX-License-Identifier: Artistic-2.0
 
 use v5.26;
 use Object::Pad;
 
-package Algorithm::UrataniTakeda v0.0.4;
+package Algorithm::UrataniTakeda v0.0.5;
+
+=head1 SYNOPSIS
+
+    my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
+
+    my $match = $m->first($text);
+
+    my @all = $m->matches($text);
+
+    sub callback( $pos, $phrase ) {
+        ...
+        return 1;
+    }
+
+    while (<STDIN>) {
+        $m->search( $_, \&callback );
+    }
+
+=head1 STATUS
+
+This is an experimental implementation.
+It may not be correct.
+
+=head1 DESCRIPTION
+
+This is an implementation of the Uratani-Takeda algorithm for searching for multiple strings.
+
+It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is similar to the Commentz-Walter algorithm.
+
+=cut
 
 class Algorithm::UrataniTakeda {
 
@@ -138,6 +163,20 @@ class Algorithm::UrataniTakeda {
 
     }
 
+=method search
+
+    sub callback( $pos, $phrase ) {
+        ...
+    }
+
+    $m->search( $text, \&callback );
+
+This searches the text and calls the callback function for every match.
+
+If the callback returns a false value, it stops looking for additional matches.
+
+=cut
+
     method search( $text, $callback ) {
 
         use integer;
@@ -171,6 +210,16 @@ class Algorithm::UrataniTakeda {
 
     }
 
+=method matches
+
+    my @matches = $m->matches( $text );
+
+This returns an array of all matches.
+
+If there are no matches, then it will return an empty array.
+
+=cut
+
     method matches( $text ) {
 
         my @matches;
@@ -179,6 +228,14 @@ class Algorithm::UrataniTakeda {
 
         return @matches;
     }
+
+=method first
+
+    my $match = $m->first( $text );
+
+This returns the first match, or C<undef> if there are none.
+
+=cut
 
     method first( $text ) {
 
@@ -201,3 +258,10 @@ class Algorithm::UrataniTakeda {
     }
 
 }
+
+=head1 SEE ALSO
+
+This implementation was based on "A Fast String-Searching Algorithm for Multiple Patterns", B<Information, Processing & Management 29 (6)>, pp. 775-791, 1993.
+L<doi:10.1016/0306-4573(93)90106-N>.
+
+=cut
