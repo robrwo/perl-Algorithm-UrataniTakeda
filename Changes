@@ -10,6 +10,8 @@ Revision history for {{ $dist->name }}:
 
   - Fixed an off-by-one error when building the shift2 function.
 
+  - Fixed a bug in the phi function.
+
   [Documentation]
   - Added code sample for the has_match method.
 

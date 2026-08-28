@@ -98,6 +98,9 @@ class Algorithm::UrataniTakeda {
             for my $c ( keys $states->[$r]->%* ) {
                 push @q, my $s = $states->[$r]{$c};
                 my $z = $phi->[$r];
+                while ( !exists $states->[$z]{$c} ) {
+                    $z = $phi->[$z] or last;
+                }
                 $phi->[$s] = $states->[$z]{$c} // 0;
             }
         }
