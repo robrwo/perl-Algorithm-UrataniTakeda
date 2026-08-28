@@ -261,7 +261,7 @@ This was added in v0.1.2.
     method has_match( $text ) {
         my $match = "";
 
-        $self->search( $text, sub( $, $phrase ) { $match = 1; return 0; } );
+        $self->search( $text, sub( $, $ ) { $match = 1; return 0; } );
 
         return $match;
     }
