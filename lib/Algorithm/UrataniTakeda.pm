@@ -8,7 +8,7 @@ use Object::Pad;
 
 package Algorithm::UrataniTakeda;
 
-our $VERSION = 'v0.1.3';
+our $VERSION = 'v0.1.4';
 
 =head1 SYNOPSIS
 
