@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.2    2026-08-28 15:49:07+01:00 Europe/London
   [Enhancements]
   - Added has_match method.
 
