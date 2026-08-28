@@ -153,7 +153,7 @@ class Algorithm::UrataniTakeda {
 
                 $z = $phi->[$z];
             }
-            $shift2->[0] = $min;
+            $shift2->[0] = $min + 1; # note that $min is zero-based
             my @q = (0);
 
             while (@q) {

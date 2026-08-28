@@ -8,6 +8,8 @@ Revision history for {{ $dist->name }}:
 
   - Fixed search wraparound error.
 
+  - Fixed an off-by-one error when building the shift2 function.
+
   [Documentation]
   - Added code sample for the has_match method.
 
