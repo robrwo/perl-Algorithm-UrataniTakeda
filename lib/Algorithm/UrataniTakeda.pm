@@ -81,7 +81,7 @@ class Algorithm::UrataniTakeda {
             $i--;
         }
 
-        $states->[$n] = {};
+        $states->[$n] //= {};
         $ends->[$n] = $pattern;
         push $left->@*, $n;
     }

@@ -42,6 +42,7 @@ Changes for version v0.1.3 (2026-08-28)
 
 - Bug Fixes
     - Fixed the missing yield true in the class, to future-proof this module.
+    - Fixed enter method destroying the ends of trie branches.
 - Documentation
     - Added code sample for the has\_match method.
 
