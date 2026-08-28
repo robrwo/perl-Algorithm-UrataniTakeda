@@ -38,16 +38,10 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 # RECENT CHANGES
 
-Changes for version v0.1.3 (2026-08-28)
+Changes for version v0.1.4 (2026-08-28)
 
-- Bug Fixes
-    - Fixed the missing yield true in the class, to future-proof this module.
-    - Fixed enter method destroying the ends of trie branches.
-    - Fixed search wraparound error.
-    - Fixed an off-by-one error when building the shift2 function.
-    - Fixed a bug in the phi function.
-- Documentation
-    - Added code sample for the has\_match method.
+- Tests
+    - Removed an unnecessary test.
 
 See the `Changes` file for more details.
 
