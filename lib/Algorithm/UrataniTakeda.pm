@@ -250,6 +250,21 @@ This returns the first match, or C<undef> if there are none.
         return $match;
     }
 
+=method has_match
+
+This returns true if there is a match.
+
+This was added in v0.1.2.
+
+=cut
+
+    method has_match( $text ) {
+        my $match = "";
+
+        $self->search( $text, sub( $, $phrase ) { $match = 1; return 0; } );
+
+        return $match;
+    }
 
     ADJUST :params ( :$patterns ) {
 

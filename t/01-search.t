@@ -77,5 +77,13 @@ subtest 'first' => sub {
 
 };
 
+subtest 'has_match' => sub {
+
+    ok $m->first("the-greatest-artist-has-the-smartest-traces"), "expected result";
+
+    ok !$m->first("the-quick-brown-fox-jumped"), undef, "no result";
+
+};
+
 
 done_testing;

@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added has_match method.
+
   [Documentation]
   - Moved STATUS section above DESCRIPTION.
 

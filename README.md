@@ -36,6 +36,8 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 Changes for version v0.1.2 (2026-08-28)
 
+- Enhancements
+    - Added has\_match method.
 - Documentation
     - Moved STATUS section above DESCRIPTION.
     - Fixed citation in SEE ALSO.
