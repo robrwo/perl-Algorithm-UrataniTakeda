@@ -10,27 +10,54 @@ use experimental qw( signatures );
 
 my @patterns = qw( trace artist smart great test );
 
-my @output;
 
 my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
 
-$m->search(
-    "the-greatest-artist-has-the-smartest-traces",
-    sub( $pos, $phrase ) {
-        push @output, [ $pos, $phrase ];
-    }
-);
+subtest 'search all' => sub {
 
-is \@output, [
+    my @output;
 
-    [ 4,  "great" ],
-    [ 8,  "test" ],
-    [ 13, "artist" ],
-    [ 28, "smart" ],
-    [ 32, "test" ],
-    [ 37, "trace" ]
+    $m->search(
+        "the-greatest-artist-has-the-smartest-traces",
+        sub( $pos, $phrase ) {
+            push @output, [ $pos, $phrase ];    # implicitly returns true
+        }
+    );
 
-  ],
-  "expected output";
+    is \@output, [
+
+        [ 4,  "great" ],
+        [ 8,  "test" ],
+        [ 13, "artist" ],
+        [ 28, "smart" ],
+        [ 32, "test" ],
+        [ 37, "trace" ]
+
+    ],
+    "expected output";
+
+};
+
+subtest 'search with callback indicating stop' => sub {
+
+    my @output;
+
+    $m->search(
+        "the-greatest-artist-has-the-smartest-traces",
+        sub( $pos, $phrase ) {
+            push @output, [ $pos, $phrase ];
+            return $phrase !~ /st$/;
+        }
+    );
+
+    is \@output, [
+
+        [ 4,  "great" ],
+        [ 8,  "test" ],
+
+    ],
+    "expected output";
+
+};
 
 done_testing;

@@ -9,7 +9,7 @@
 use v5.26;
 use Object::Pad;
 
-package Algorithm::UrataniTakeda v0.0.1;
+package Algorithm::UrataniTakeda v0.0.2;
 
 class Algorithm::UrataniTakeda {
 
@@ -147,13 +147,13 @@ class Algorithm::UrataniTakeda {
 
         my $q = $min;
 
-        while ( $q <= $n ) {
+      TEXT: while ( $q <= $n ) {
 
             my $z = 0;
             while ( $states->[$z]{ $string[$q] } ) {
                 $z = $states->[$z]{ $string[$q] };
                 if ( $ends->[$z] ) {
-                    $callback->( $q, $ends->[$z] );
+                    $callback->( $q, $ends->[$z] ) or last TEXT;
                 }
                 $q--;
             }
