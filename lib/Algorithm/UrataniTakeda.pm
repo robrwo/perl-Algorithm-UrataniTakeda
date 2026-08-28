@@ -268,7 +268,7 @@ This returns the first match, or C<undef> if there are none.
 This implementation was based on "A Fast String-Searching Algorithm for Multiple Patterns", B<Information, Processing & Management 29 (6)>, pp. 775-791, 1993.
 L<doi:10.1016/0306-4573(93)90106-N>.
 
-head1 prepend:SUPPORT
+=head1 prepend:SUPPORT
 
 Only the latest release of this module will be supported.
 

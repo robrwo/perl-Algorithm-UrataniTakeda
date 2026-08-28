@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Documentation]
+  - Fixed a POD markup error.
 
 v0.1.0    2026-08-28 12:01:42+01:00 Europe/London
   - Initial version released.
