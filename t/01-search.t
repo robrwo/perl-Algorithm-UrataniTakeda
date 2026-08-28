@@ -65,6 +65,8 @@ subtest 'matches' => sub {
     is [ $m->matches("the-greatest-artist-has-the-smartest-traces") ],
       [qw( great test artist smart test trace )], "expected result";
 
+    is [ $m->matches("the-quick-brown-fox-jumped") ], [], "no result";
+
 };
 
 subtest 'first' => sub {
