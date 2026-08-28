@@ -34,10 +34,10 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 # RECENT CHANGES
 
-Changes for version v0.1.1 (2026-08-28)
+Changes for version v0.1.2 (2026-08-28)
 
-- Documentation
-    - Fixed a POD markup error.
+- Toolchain
+    - Updated keyword metadata
 
 See the `Changes` file for more details.
 

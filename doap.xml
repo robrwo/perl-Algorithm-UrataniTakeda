@@ -8,9 +8,21 @@
   >
   <name>Algorithm-UrataniTakeda</name>
   <shortdesc>an implementation of the Uratani-Takeda string searching algorithm</shortdesc>
+  <category rdfs:label="Aho-Corasick" />
+  <category rdfs:label="Boyer-Moore" />
+  <category rdfs:label="Commentz-Walter" />
+  <category rdfs:label="Uratani-Takeda" />
+  <category rdfs:label="algorithm" />
+  <category rdfs:label="multi-term" />
+  <category rdfs:label="multiple" />
+  <category rdfs:label="patterns" />
+  <category rdfs:label="pattern" />
+  <category rdfs:label="matching" />
+  <category rdfs:label="string" />
+  <category rdfs:label="matching" />
   <category rdfs:label="string" />
   <category rdfs:label="searching" />
-  <category rdfs:label="pattern-matching" />
+  <category rdfs:label="text-search" />
   <developer>
     <foaf:Person>
       <foaf:name>Robert Rothenberg</foaf:name>

@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Toolchain]
+  - Updated keyword metadata
 
 v0.1.1    2026-08-28 12:15:53+01:00 Europe/London
   [Documentation]
