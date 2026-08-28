@@ -8,7 +8,7 @@ use Object::Pad;
 
 package Algorithm::UrataniTakeda;
 
-our $VERSION = 'v0.1.1'; # Dist::Zilla cannot handle versions on the package line.
+our $VERSION = 'v0.1.2';
 
 =head1 SYNOPSIS
 
