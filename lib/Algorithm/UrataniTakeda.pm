@@ -10,6 +10,8 @@ package Algorithm::UrataniTakeda;
 
 our $VERSION = 'v0.1.4';
 
+use Carp ();
+
 =head1 SYNOPSIS
 
     use Algorithm::UrataniTakeda;
@@ -281,7 +283,12 @@ This was added in v0.1.2.
 
     ADJUST :params ( :$patterns ) {
 
-        $self->enter($_) for $patterns->@*;
+        if ( my @patterns = $patterns->@* ) {
+            $self->enter($_) for @patterns;
+        }
+        else {
+            Carp::croak sprintf("Parameter 'patterns' cannot be empty for \%s constructor", ref($self) );
+        }
 
         $self->build_phi;
         $self->build_shift1;

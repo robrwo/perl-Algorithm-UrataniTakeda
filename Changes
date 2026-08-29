@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Throw an error when the patterns are empty.
+
   [Documentation]
   - Updated SYNOPSIS.
 

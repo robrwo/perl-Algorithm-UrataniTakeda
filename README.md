@@ -44,6 +44,8 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 Changes for version v0.1.4 (2026-08-29)
 
+- Bug Fixes
+    - Throw an error when the patterns are empty.
 - Documentation
     - Updated SYNOPSIS.
 - Tests
@@ -55,6 +57,7 @@ See the `Changes` file for more details.
 
 This module lists the following modules as runtime dependencies:
 
+- [Carp](https://metacpan.org/pod/Carp)
 - [Object::Pad](https://metacpan.org/pod/Object%3A%3APad)
 - [integer](https://metacpan.org/pod/integer)
 - [perl](https://metacpan.org/pod/perl) version v5.26.0 or later
