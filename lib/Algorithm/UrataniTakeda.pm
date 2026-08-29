@@ -204,12 +204,12 @@ If the callback returns a false value, it stops looking for additional matches.
         my $n      = $#string;
 
         my $q = $min;
+        my $c;
 
       TEXT: while ( $q <= $n ) {
-
             my $z = 0;
-            while ( $q >= 0 && $states->[$z]{ $string[$q] } ) {
-                $z = $states->[$z]{ $string[$q] };
+            while ( $q >= 0 && $states->[$z]{ $c = $string[$q] } ) {
+                $z = $states->[$z]{$c};
                 if ( $ends->[$z] ) {
                     $callback->( $q, $ends->[$z] ) or last TEXT;
                 }
@@ -218,8 +218,8 @@ If the callback returns a false value, it stops looking for additional matches.
 
             # calculate and memoise the failure shift
             my $f = (
-                $fails->[$z]{ $string[$q] } //= do {
-                    my $a = $shift1->[$z]{ $string[$q] };
+                $fails->[$z]{$c} //= do {
+                    my $a = $shift1->[$z]{$c};
                     my $b = $shift2->[$z];
                     ( $a && $a < $b ) ? $a : $b;
                 }
