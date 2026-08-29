@@ -5,6 +5,8 @@ Revision history for {{ $dist->name }}:
   - Throw an error when the patterns are empty.
 
   [Documentation]
+  - Documented the patterns parameter.
+
   - Updated SYNOPSIS.
 
   [Tests]

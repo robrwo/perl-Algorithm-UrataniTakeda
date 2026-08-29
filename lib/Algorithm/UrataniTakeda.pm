@@ -281,6 +281,14 @@ This was added in v0.1.2.
         return $match;
     }
 
+=attr patterns
+
+This is a required array reference of strings to search for.
+
+It must not be empty or contain empty strings.
+
+=cut
+
     ADJUST :params ( :$patterns ) {
 
         if ( my @patterns = $patterns->@* ) {

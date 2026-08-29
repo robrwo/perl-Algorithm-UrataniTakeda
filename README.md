@@ -47,6 +47,7 @@ Changes for version v0.1.4 (2026-08-29)
 - Bug Fixes
     - Throw an error when the patterns are empty.
 - Documentation
+    - Documented the patterns parameter.
     - Updated SYNOPSIS.
 - Tests
     - Removed an unnecessary test.
