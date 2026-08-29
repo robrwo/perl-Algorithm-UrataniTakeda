@@ -54,6 +54,7 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 class Algorithm::UrataniTakeda {
 
     field $states = [];
+    field $fails  = [];
     field $ends   = [];
     field $left   = [];
     field $depth  = [];
@@ -215,12 +216,16 @@ If the callback returns a false value, it stops looking for additional matches.
                 $q--;
             }
 
-            # calculate minimum failure shift
-            my $a = $shift1->[$z]{ $string[$q] };
-            my $b = $shift2->[$z];
-            $b = $a if $a && $a < $b;
+            # calculate and memoise the failure shift
+            my $f = (
+                $fails->[$z]{ $string[$q] } //= do {
+                    my $a = $shift1->[$z]{ $string[$q] };
+                    my $b = $shift2->[$z];
+                    ( $a && $a < $b ) ? $a : $b;
+                }
+            );
 
-            $q += $b;
+            $q += $f;
 
             last if $q > $n;
 
