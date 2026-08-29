@@ -45,6 +45,7 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 Changes for version v0.1.5 (2026-08-29)
 
 - Documentation
+    - Documented KNOWN ISSUES with the order of results.
     - Added AI\_POLICY.md.
     - Updated Changes for v0.1.3 to indicate that the bugs were identified by Claude.
 - Tests

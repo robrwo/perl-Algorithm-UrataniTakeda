@@ -313,6 +313,23 @@ It must not be empty or contain empty strings.
 
 1;
 
+=head1 KNOWN ISSUES
+
+When some of the L</patterns> are substrings other patterns, the order results returned by L</matches> or even L</first>
+may not be consistent.
+
+To ensure consistent ordering, you need to use the L</search> method with a custom sort.
+For example, to to get the keywords sorted by position and then longest-match-first, use:
+
+    my @raw;
+
+    $m->search( $text, sub ( $pos, $phrase ) { push @raw, [ $pos, $phrase ] } );
+
+    my @results =
+      map { $_->[1] }
+      sort { $a->[0] <=> $b->[0] || length( $b->[1] ) <=> length( $a->[1] ) }
+      @raw;
+
 =head1 SEE ALSO
 
 This implementation was based on
