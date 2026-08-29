@@ -50,7 +50,7 @@ Changes for version v0.1.4 (2026-08-29)
     - Documented the patterns parameter.
     - Updated SYNOPSIS.
 - Tests
-    - Removed an unnecessary test.
+    - Added tests for bugs that were fixed in v0.1.3.
 
 See the `Changes` file for more details.
 
