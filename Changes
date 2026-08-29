@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Improved performance by memoising the shift function.
+
   [Documentation]
   - Documented KNOWN ISSUES with the order of results.
 
