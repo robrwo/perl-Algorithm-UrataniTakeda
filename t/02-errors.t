@@ -13,6 +13,12 @@ subtest 'patterns' => sub {
 
     like dies { Algorithm::UrataniTakeda->new( patterns => [] ) }, qr/^Parameter 'patterns' cannot be empty/, "empty patterns";
 
+    like dies { Algorithm::UrataniTakeda->new( patterns => [ "one", undef ] ) }, qr/^Parameter 'patterns' cannot contain empty strings/,
+      "patterns with undef";
+
+    like dies { Algorithm::UrataniTakeda->new( patterns => [ "one", "" ] ) }, qr/^Parameter 'patterns' cannot contain empty strings/,
+      "patterns with empty string";
+
 };
 
 done_testing;

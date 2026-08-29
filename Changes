@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Bug Fixes]
-  - Throw an error when the patterns are empty.
+  - Throw an error when the patterns are empty or contain an empty string.
 
   [Documentation]
   - Documented the patterns parameter.

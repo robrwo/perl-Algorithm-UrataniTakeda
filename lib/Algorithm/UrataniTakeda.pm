@@ -11,6 +11,7 @@ package Algorithm::UrataniTakeda;
 our $VERSION = 'v0.1.4';
 
 use Carp ();
+use List::Util ();
 
 =head1 SYNOPSIS
 
@@ -292,6 +293,10 @@ It must not be empty or contain empty strings.
     ADJUST :params ( :$patterns ) {
 
         if ( my @patterns = $patterns->@* ) {
+
+            Carp::croak sprintf( "Parameter 'patterns' cannot contain empty strings for \%s constructor", ref($self) )
+              if List::Util::any { !defined($_) || $_ eq "" } @patterns;
+
             $self->enter($_) for @patterns;
         }
         else {
