@@ -10,6 +10,10 @@ It may not be correct.
 # SYNOPSIS
 
 ```perl
+use Algorithm::UrataniTakeda;
+
+use experimental qw( signatures ); # for Perl versions before v5.36
+
 my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
 
 my $match = $m->first($text);
@@ -38,8 +42,10 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 # RECENT CHANGES
 
-Changes for version v0.1.4 (2026-08-28)
+Changes for version v0.1.4 (2026-08-29)
 
+- Documentation
+    - Updated SYNOPSIS.
 - Tests
     - Removed an unnecessary test.
 

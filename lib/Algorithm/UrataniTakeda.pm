@@ -12,6 +12,10 @@ our $VERSION = 'v0.1.4';
 
 =head1 SYNOPSIS
 
+    use Algorithm::UrataniTakeda;
+
+    use experimental qw( signatures ); # for Perl versions before v5.36
+
     my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
 
     my $match = $m->first($text);
