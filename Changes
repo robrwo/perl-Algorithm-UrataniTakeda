@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.4    2026-08-29 08:48:38+01:00 Europe/London
   [Bug Fixes]
   - Throw an error when the patterns are empty or contain an empty string.
 
