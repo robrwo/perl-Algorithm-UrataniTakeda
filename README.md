@@ -42,7 +42,7 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 # RECENT CHANGES
 
-Changes for version v0.1.5 (2026-08-29)
+Changes for version v0.1.5 (2026-08-30)
 
 - Enhancements
     - Improved performance by memoising the shift function.
