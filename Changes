@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.5    2026-08-30 09:32:15+01:00 Europe/London
   [Enhancements]
   - Improved performance by memoising the shift function.
 
