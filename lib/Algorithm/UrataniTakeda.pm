@@ -10,7 +10,7 @@ use Object::Pad 0.59;
 
 package Algorithm::UrataniTakeda;
 
-our $VERSION = 'v0.1.6';
+our $VERSION = 'v0.1.7';
 
 use Carp ();
 use List::Util ();

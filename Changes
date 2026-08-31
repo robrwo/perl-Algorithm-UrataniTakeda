@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.6    2026-08-31 11:56:31+01:00 Europe/London
   [Enhancements]
   - Allowed the constructor to simply contain an array reference of patterns.
 
