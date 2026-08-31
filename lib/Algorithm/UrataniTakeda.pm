@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: Artistic-2.0
 
 use v5.26;
+use warnings;
+
 use Object::Pad 0.59;
 
 # ABSTRACT: an implementation of the Uratani-Takeda string searching algorithm
