@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Allowed the constructor to simply contain an array reference of patterns.
 
+  - Changed internal methods to lexical methods so that they are effectively private.
+
 v0.1.5    2026-08-30 09:32:15+01:00 Europe/London
   [Enhancements]
   - Improved performance by memoising the shift function.

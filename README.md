@@ -46,6 +46,7 @@ Changes for version v0.1.6 (2026-08-31)
 
 - Enhancements
     - Allowed the constructor to simply contain an array reference of patterns.
+    - Changed internal methods to lexical methods so that they are effectively private.
 
 See the `Changes` file for more details.
 
@@ -55,7 +56,7 @@ This module lists the following modules as runtime dependencies:
 
 - [Carp](https://metacpan.org/pod/Carp)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil)
-- [Object::Pad](https://metacpan.org/pod/Object%3A%3APad)
+- [Object::Pad](https://metacpan.org/pod/Object%3A%3APad) version 0.59 or later
 - [integer](https://metacpan.org/pod/integer)
 - [perl](https://metacpan.org/pod/perl) version v5.26.0 or later
 

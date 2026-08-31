@@ -3,7 +3,7 @@
 
 requires "Carp" => "0";
 requires "List::Util" => "0";
-requires "Object::Pad" => "0";
+requires "Object::Pad" => "0.59";
 requires "integer" => "0";
 requires "perl" => "v5.26.0";
 

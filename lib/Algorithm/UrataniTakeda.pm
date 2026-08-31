@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Artistic-2.0
 
 use v5.26;
-use Object::Pad;
+use Object::Pad 0.59;
 
 # ABSTRACT: an implementation of the Uratani-Takeda string searching algorithm
 
@@ -63,7 +63,7 @@ class Algorithm::UrataniTakeda {
     field $shift1 = [];
     field $shift2 = [];
 
-    method enter($pattern) {
+    method $enter($pattern) {
 
         use integer;
 
@@ -94,7 +94,7 @@ class Algorithm::UrataniTakeda {
         push $left->@*, $n;
     }
 
-    method build_phi {
+    method $build_phi {
 
         use integer;
 
@@ -114,7 +114,7 @@ class Algorithm::UrataniTakeda {
         }
     }
 
-    method build_shift1 {
+    method $build_shift1 {
 
         use integer;
 
@@ -149,7 +149,7 @@ class Algorithm::UrataniTakeda {
 
     }
 
-    method build_shift2 {
+    method $build_shift2 {
 
         use integer;
 
@@ -308,15 +308,15 @@ Since version v0.1.6, the constructor can be called with an array reference that
             Carp::croak sprintf( "Parameter 'patterns' cannot contain empty strings for \%s constructor", ref($self) )
               if List::Util::any { !defined($_) || $_ eq "" } @patterns;
 
-            $self->enter($_) for @patterns;
+            $self->$enter($_) for @patterns;
         }
         else {
             Carp::croak sprintf("Parameter 'patterns' cannot be empty for \%s constructor", ref($self) );
         }
 
-        $self->build_phi;
-        $self->build_shift1;
-        $self->build_shift2;
+        $self->$build_phi;
+        $self->$build_shift1;
+        $self->$build_shift2;
 
     }
 
@@ -374,7 +374,7 @@ then see F<SECURITY.md> for instructions how to report security vulnerabilities.
 
 =for Pod::Coverage DOES META new
 
-=for Pod::Coverage BUILDARGS build_phi build_shift1 build_shift2 enter
+=for Pod::Coverage BUILDARGS
 
 =for stopwords Aho Commentz Corasick Takeda Uratani
 
