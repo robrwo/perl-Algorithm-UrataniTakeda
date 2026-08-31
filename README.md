@@ -14,7 +14,7 @@ use Algorithm::UrataniTakeda;
 
 use experimental qw( signatures ); # for Perl versions before v5.36
 
-my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
+my $m = Algorithm::UrataniTakeda->new( \@patterns );
 
 my $match = $m->first($text);
 
@@ -42,17 +42,10 @@ It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is si
 
 # RECENT CHANGES
 
-Changes for version v0.1.5 (2026-08-30)
+Changes for version v0.1.6 (2026-08-31)
 
 - Enhancements
-    - Improved performance by memoising the shift function.
-- Documentation
-    - Documented KNOWN ISSUES with the order of results.
-    - Added AI\_POLICY.md.
-    - Updated Changes for v0.1.3 to indicate that the bugs were identified by Claude.
-- Tests
-    - Added more tests for bugs that were fixed in v0.1.3.
-    - Commits were retroactively updated to note that the test cases were assisted-by Claude.
+    - Allowed the constructor to simply contain an array reference of patterns.
 
 See the `Changes` file for more details.
 

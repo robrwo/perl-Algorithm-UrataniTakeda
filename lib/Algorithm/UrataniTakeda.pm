@@ -19,7 +19,7 @@ use List::Util ();
 
     use experimental qw( signatures ); # for Perl versions before v5.36
 
-    my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
+    my $m = Algorithm::UrataniTakeda->new( \@patterns );
 
     my $match = $m->first($text);
 
@@ -289,9 +289,15 @@ This was added in v0.1.2.
 
 =attr patterns
 
+    my $m = Algorithm::UrataniTakeda->new( patterns => \@patterns );
+
 This is a required array reference of strings to search for.
 
 It must not be empty or contain empty strings.
+
+Since version v0.1.6, the constructor can be called with an array reference that is be assumed to be the patterns:
+
+    my $m = Algorithm::UrataniTakeda->new( \@patterns );
 
 =cut
 
@@ -312,6 +318,15 @@ It must not be empty or contain empty strings.
         $self->build_shift1;
         $self->build_shift2;
 
+    }
+
+    sub BUILDARGS( $class, @args ) {
+
+        if ( @args == 1 && ref( $args[0] ) eq "ARRAY" ) {
+            return $class->SUPER::BUILDARGS( patterns => $args[0] );
+        }
+
+        return $class->SUPER::BUILDARGS(@args);
     }
 
 }
@@ -359,7 +374,7 @@ then see F<SECURITY.md> for instructions how to report security vulnerabilities.
 
 =for Pod::Coverage DOES META new
 
-=for Pod::Coverage build_phi build_shift1 build_shift2 enter
+=for Pod::Coverage BUILDARGS build_phi build_shift1 build_shift2 enter
 
 =for stopwords Aho Commentz Corasick Takeda Uratani
 
