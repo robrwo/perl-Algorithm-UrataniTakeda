@@ -40,6 +40,15 @@ This is an implementation of the Uratani-Takeda algorithm for searching for mult
 
 It combines the Aho-Corasick algorithm with the Boyer-Moore algorithm, and is similar to the Commentz-Walter algorithm.
 
+# RECENT CHANGES
+
+Changes for version v0.1.7 (2026-09-09)
+
+- Tests
+    - Added a test case to prove that duplicate keywords do not return duplicate results.
+
+See the `Changes` file for more details.
+
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
