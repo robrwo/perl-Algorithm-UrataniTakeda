@@ -169,20 +169,24 @@ class Algorithm::UrataniTakeda {
 
                 $z = $phi->[$z];
             }
-            $shift2->[0] = $min + 1; # note that $min is zero-based
-            my @q = (0);
+        }
 
-            while (@q) {
-                my $r = shift @q;
-                for my $c ( keys $states->[$r]->%* ) {
-                    push @q, my $s = $states->[$r]{$c};
+        # Propagate once, after every pattern's chain has been applied: both steps only ever lower a value and
+        # propagation flows parent-to-child, so a single top-down pass reaches the same fixpoint that a pass per
+        # pattern did, in O(states) instead of O(patterns x states).
 
-                    my $a = $shift2->[$s];
-                    my $b = $shift2->[$r] + 1;
-                    $shift2->[$s] = $b unless $a && $a < $b;
-                }
+        $shift2->[0] = $min + 1; # note that $min is zero-based
+        my @q = (0);
+
+        while (@q) {
+            my $r = shift @q;
+            for my $c ( keys $states->[$r]->%* ) {
+                push @q, my $s = $states->[$r]{$c};
+
+                my $a = $shift2->[$s];
+                my $b = $shift2->[$r] + 1;
+                $shift2->[$s] = $b unless $a && $a < $b;
             }
-
         }
 
     }
