@@ -73,7 +73,7 @@ class Algorithm::UrataniTakeda {
         my @string = unpack( "U*", $pattern );
         my $i = $#string;
 
-        $alpha->{$_} //= 1 for @string;
+        $alpha->{$_} = \1 for @string;
 
         $min = $i if $min < 0 || $min > $i;
 
@@ -230,7 +230,7 @@ If the callback returns a false value, it stops looking for additional matches.
             # memo grows by one entry per (state, distinct character) ever seen in searched text and is never released.
 
             my $f = (
-                $fails->[$z]{ $alpha->{$c} ? $c : -1 } //= do {
+                $fails->[$z]{ exists $alpha->{$c} ? $c : -1 } //= do {
                     my $a = $shift1->[$z]{$c};
                     my $b = $shift2->[$z];
                     ( $a && $a < $b ) ? $a : $b;

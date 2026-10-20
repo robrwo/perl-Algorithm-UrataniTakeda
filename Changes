@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Improved the performance for setting up the fail shift cache.
 
 v0.1.7    2026-10-20 20:48:11+01:00 Europe/London
   [Security]
