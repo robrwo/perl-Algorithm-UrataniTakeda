@@ -7,6 +7,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Improve the performance of the shift2 table builder.
 
+  [Bug Fixes]
+  - Find matches of "0".
+
   [Tests]
   - Added a test case to prove that duplicate keywords do not return duplicate results.
 

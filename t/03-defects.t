@@ -97,6 +97,17 @@ subtest "duplicate keywords" => sub {
 
 };
 
+subtest "zero" => sub {
+
+    my $m = Algorithm::UrataniTakeda->new( patterns => [ "0" ] );
+
+    is match_details( $m, "d0g" ), as_bag(
+        [ 1, "0" ],
+    );
+
+};
+
+
 sub as_bag(@list) {
 
     my $arr = Test2::Compare::Bag->new;
