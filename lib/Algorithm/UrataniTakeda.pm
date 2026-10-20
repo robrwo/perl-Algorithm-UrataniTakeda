@@ -95,7 +95,7 @@ class Algorithm::UrataniTakeda {
         }
 
         $states->[$n] //= {};
-        $ends->[$n] = $pattern;
+        $ends->[$n] = \$pattern;
         push $left->@*, $n;
     }
 
@@ -219,8 +219,8 @@ If the callback returns a false value, it stops looking for additional matches.
             my $z = 0;
             while ( $q >= 0 && $states->[$z]{ $c = $string[$q] } ) {
                 $z = $states->[$z]{$c};
-                if ( defined $ends->[$z] ) {
-                    $callback->( $q, $ends->[$z] ) or last TEXT;
+                if ( $ends->[$z] ) {
+                    $callback->( $q, $ends->[$z]->$* ) or last TEXT;
                 }
                 $q--;
             }
