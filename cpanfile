@@ -18,6 +18,7 @@ on 'test' => sub {
   requires "IO::Handle" => "0";
   requires "IPC::Open3" => "0";
   requires "Module::Metadata" => "0";
+  requires "Object::Pad::MOP::Class" => "0";
   requires "Test2::Tools::Compare" => "0";
   requires "Test2::Tools::Exception" => "0";
   requires "Test2::V0" => "0";

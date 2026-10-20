@@ -57,6 +57,7 @@ class Algorithm::UrataniTakeda {
 
     field $states = [];
     field $fails  = [];
+    field $alpha  = {};   # code points occurring in any pattern
     field $ends   = [];
     field $left   = [];
     field $depth  = [];
@@ -71,6 +72,8 @@ class Algorithm::UrataniTakeda {
 
         my @string = unpack( "U*", $pattern );
         my $i = $#string;
+
+        $alpha->{$_} //= 1 for @string;
 
         $min = $i if $min < 0 || $min > $i;
 
@@ -218,9 +221,12 @@ If the callback returns a false value, it stops looking for additional matches.
                 $q--;
             }
 
-            # calculate and memoise the failure shift
+            # calculate and memoise the failure shift.  A character that occurs in no pattern has no shift1 entry from
+            # any state, so every such character takes the same shift from $z: memoise them under one shared key, or the
+            # memo grows by one entry per (state, distinct character) ever seen in searched text and is never released.
+
             my $f = (
-                $fails->[$z]{$c} //= do {
+                $fails->[$z]{ $alpha->{$c} ? $c : -1 } //= do {
                     my $a = $shift1->[$z]{$c};
                     my $b = $shift2->[$z];
                     ( $a && $a < $b ) ? $a : $b;

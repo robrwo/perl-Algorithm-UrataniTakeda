@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Security]
+  - Limit the size of the failure shift table. (CVE-2026-113811)
+
   [Tests]
   - Added a test case to prove that duplicate keywords do not return duplicate results.
 
